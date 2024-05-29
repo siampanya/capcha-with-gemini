@@ -7,7 +7,7 @@ import (
 	"github.com/siampanya/capcha-with-gemini/internal/service"
 )
 
-func App(ctx context.Context) error {
+func App(ctx context.Context) interface{} {
 
 	var url string
 	fmt.Print("Enter captcha url: ")
@@ -15,5 +15,5 @@ func App(ctx context.Context) error {
 
 	service.Gemini(ctx, url)
 
-	return nil
+	return App(ctx)
 }

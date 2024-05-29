@@ -28,7 +28,7 @@ func Gemini(ctx context.Context, url string) {
 
 	prompt := []genai.Part{
 		genai.ImageData("jpeg", capcha),
-		genai.Text("What is number, show JSON pattern {code:xxxx}"),
+		genai.Text("What is number, read captcha, show JSON pattern {code:xxxx}"),
 	}
 
 	resp, err := model.GenerateContent(ctx, prompt...)
@@ -37,4 +37,5 @@ func Gemini(ctx context.Context, url string) {
 	}
 
 	fmt.Println(resp.Candidates[0].Content.Parts[0])
+
 }

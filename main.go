@@ -17,4 +17,5 @@ func main() {
 	ctx := context.Background()
 	app.App(ctx)
 
+	select {}
 }
